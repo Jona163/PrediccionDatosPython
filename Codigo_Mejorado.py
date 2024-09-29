@@ -58,3 +58,13 @@ for i in grado:
     mse_values.append(MSE)
     
     print(f"Para grado {i} El MSE es: {MSE}")
+
+# Gráfica de MSE
+plt.figure(figsize=[20, 10])
+plt.title("Grado del polinomio vs predicción")
+plt.plot(grado, aproxi, "--", linewidth=3, color='red', label='Predicción 2000')
+plt.xlabel("Grado del polinomio")
+plt.ylabel("Predicción para el año 2000")
+plt.grid("on")
+plt.legend()
+plt.show()
