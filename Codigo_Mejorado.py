@@ -68,3 +68,13 @@ plt.ylabel("Predicción para el año 2000")
 plt.grid("on")
 plt.legend()
 plt.show()
+
+# Gráfica de MSE
+plt.figure(figsize=[20, 10])
+plt.title("Grado del polinomio vs MSE")
+plt.plot(grado, mse_values, "--", linewidth=3, color='blue', label='MSE')
+plt.xlabel("Grado del polinomio")
+plt.ylabel("Error cuadrático medio (MSE)")
+plt.grid("on")
+plt.legend()
+plt.show()
