@@ -14,3 +14,13 @@ def fx(x1, coef):
 
 # Anno para la predicción
 anno = 2000
+
+# Gráfica de predicciones
+for i in range(1, 11):  # Grados del polinomio desde 1 hasta 10
+    coef = np.polyfit(x, y, i)  # Ajuste del polinomio
+    p = np.polyval(coef, anno)   # Predicción para el año 2000
+
+    print(f"Para grado {i} la predicción es {p}")
+    
+    x1 = np.linspace(1920, anno + 1, 1000)  # Valores de x para graficar
+    y1 = fx(x1, coef)                       # Valores de y correspondientes
