@@ -24,3 +24,13 @@ for i in range(1, 11):  # Grados del polinomio desde 1 hasta 10
     
     x1 = np.linspace(1920, anno + 1, 1000)  # Valores de x para graficar
     y1 = fx(x1, coef)                       # Valores de y correspondientes
+
+
+    # Configuración de la gráfica
+    plt.figure(figsize=[20, 10])
+    plt.title(f"Cantidad de litros vs año. Para grado: {i}")
+    plt.scatter(x, y, s=120, c='blueviolet', label='Datos reales')
+    plt.plot(x1, y1, "--", linewidth=3, color='orange', label='Ajuste polinómico')
+    plt.scatter(anno, p, s=200, c='red', label='Predicción 2000')
+    plt.yticks(range(100, 320, 20))
+    plt.grid("on")
