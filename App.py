@@ -34,5 +34,26 @@ for i in range(0,10):
     ax.set_ylabel("$Cantidad litros$")
     #plt.savefig("img" + str(i)+".jpg", dpi=600)
     plt.show()
-
-#resultado esperado:para grado 0 la predicción es 172.04249999999996
+anno = 2000
+grado = np.arange(0, 30 + 1, 1) #de 0 a 100 de 1 en 1
+aproxi = np.array([])
+y_pred_vec = np.array([])
+for i in grado:
+    coef = np.polyfit(x,y,i)
+    p = np.polyval(coef, anno)
+    aproxi = np.append(aproxi, p)
+    
+    # para la MSE
+    y_pred_vec = np.array([])
+    for j in x: # para la MSE
+        y_pred = np.polyval(coef, j)
+        y_pred_vec = np.append(y_pred_vec,y_pred)
+    #print(f"los y: {y}")
+    #print(f"los y_aprox: {y_pred_vec}")
+    MSE = (sum( (y - y_pred_vec)**2 ))/len(y)
+    print(f"Para grado {i} El MES es: {MSE}")
+plt.figure(figsize=[20,10])
+plt.title("Grado del polinomio vs predicción")
+plt.plot(grado,aproxi,"--",linewidth=3,color='red')
+plt.grid("on")
+plt.show()
