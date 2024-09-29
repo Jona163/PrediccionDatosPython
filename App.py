@@ -17,3 +17,20 @@ anno = 2000
 for i in range(0,10):
     coef = np.polyfit(x,y,i)
     p = np.polyval(coef, anno)
+
+ print(f"para grado {i} la predicción es {p}")
+    x1 = np.linspace(1920, anno + 1, 1000)
+    y1 = fx(x1, coef) # funcion
+    plt.figure(figsize=[20,10])
+    plt.title("Cantidad de litros vs año. Para grado: " + str(i))
+    
+    plt.scatter(x,y,s=120,c='blueviolet')
+    plt.plot(x1,y1,"--",linewidth=3,color='orange')
+    plt.scatter(anno,p,s=200,c='red')
+    plt.yticks(range(100,320,20))
+    plt.grid("on")
+    ax=plt.gca()
+    ax.set_xlabel("$años$")
+    ax.set_ylabel("$Cantidad litros$")
+    #plt.savefig("img" + str(i)+".jpg", dpi=600)
+    plt.show()
