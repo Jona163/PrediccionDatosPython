@@ -40,3 +40,8 @@ for i in range(1, 11):  # Grados del polinomio desde 1 hasta 10
     plt.ylabel("Cantidad litros")
     plt.legend()
     plt.show()
+
+# Cálculo de MSE para cada grado del polinomio
+grado = np.arange(0, 31)  # Grados de 0 a 30
+aproxi = []  # Lista para almacenar las aproximaciones
+mse_values = []  # Lista para almacenar los valores de MSE
