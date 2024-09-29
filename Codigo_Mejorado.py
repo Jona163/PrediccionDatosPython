@@ -45,3 +45,16 @@ for i in range(1, 11):  # Grados del polinomio desde 1 hasta 10
 grado = np.arange(0, 31)  # Grados de 0 a 30
 aproxi = []  # Lista para almacenar las aproximaciones
 mse_values = []  # Lista para almacenar los valores de MSE
+
+
+for i in grado:
+    coef = np.polyfit(x, y, i)  # Ajuste del polinomio
+    p = np.polyval(coef, anno)   # Predicción para el año 2000
+    aproxi.append(p)
+
+    # Predicciones para el cálculo de MSE
+    y_pred_vec = np.polyval(coef, x)  # Predicciones sobre el conjunto x
+    MSE = np.mean((y - y_pred_vec) ** 2)  # Cálculo del MSE
+    mse_values.append(MSE)
+    
+    print(f"Para grado {i} El MSE es: {MSE}")
