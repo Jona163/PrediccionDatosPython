@@ -34,3 +34,9 @@ for i in range(1, 11):  # Grados del polinomio desde 1 hasta 10
     plt.scatter(anno, p, s=200, c='red', label='Predicción 2000')
     plt.yticks(range(100, 320, 20))
     plt.grid("on")
+
+  # Etiquetas de los ejes
+    plt.xlabel("Años")
+    plt.ylabel("Cantidad litros")
+    plt.legend()
+    plt.show()
