@@ -34,3 +34,5 @@ for i in range(0,10):
     ax.set_ylabel("$Cantidad litros$")
     #plt.savefig("img" + str(i)+".jpg", dpi=600)
     plt.show()
+
+#resultado esperado:para grado 0 la predicción es 172.04249999999996
